@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      weather_history: {
+        Row: {
+          city: string
+          created_at: string
+          description: string
+          icon: string | null
+          id: string
+          latitude: number
+          longitude: number
+          temperature: number
+        }
+        Insert: {
+          city: string
+          created_at?: string
+          description: string
+          icon?: string | null
+          id?: string
+          latitude: number
+          longitude: number
+          temperature: number
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          description?: string
+          icon?: string | null
+          id?: string
+          latitude?: number
+          longitude?: number
+          temperature?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
